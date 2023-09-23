@@ -36,8 +36,19 @@ Comprehensive modeling of the surrounding 3D world is key to the success of auto
 
 
 ## 3D panoptic segmentation
-- nuScenes: LiDAR Benchmark
+- nuScenes: LiDAR Semantic Segmentation (Validation)
 
+| Backbone | Config | Image Size | Epochs |  Pretrain | Memory | mIoU | mAP | NDS |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
+| R50 | [Pano-small-1f](./projects/configs/PanoOcc/Panoptic/PanoOcc_small_1f.py) | 0.5x | 24 | ImageNet | 16G  | 0.663 | 0.291 | 0.340|
+| R50 | [Pano-small-4f](./projects/configs/PanoOcc/Panoptic/PanoOcc_small_4f.py) | 0.5x | 24 | ImageNet | 18G  | 0.685 | 0.323 | 0.419|
+| R101 | [Pano-base-4f](./projects/configs/PanoOcc/Panoptic/PanoOcc_base_4f_cat.py)  | 1.0x | 24 | nus-det | 24G | 0.714 | 0.413 | 0.501|
+
+- nuScenes: LiDAR Semantic Segmentation (Test)
+
+| Backbone | Config | Image Size | Epochs |  Pretrain | mIoU |
+| :---: | :---: | :---: | :---: | :---:  | :---: |
+| R101 | [Pano-base-4f](./projects/configs/PanoOcc/Panoptic/PanoOcc_base_4f_cat_test.py)  | 1.0x | 24 | nus-det | 0.714 |
 
 # Bibtex
 If this work is helpful for your research, please consider citing the following BibTeX entry.

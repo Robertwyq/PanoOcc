@@ -20,7 +20,6 @@ import time
 import os.path as osp
 from tools.eval_metrics.lidar_seg import *
 
-
 def parse_args():
     parser = argparse.ArgumentParser(
         description='MMDet test (and eval) a model')
@@ -91,6 +90,11 @@ def parse_args():
         choices=['none', 'pytorch', 'slurm', 'mpi'],
         default='none',
         help='job launcher')
+    parser.add_argument(
+        '--test_submission',
+        default=False,
+        action='store_true',
+    )
     parser.add_argument('--local_rank', type=int, default=0)
     args = parser.parse_args()
     if 'LOCAL_RANK' not in os.environ:
@@ -239,12 +243,12 @@ def main():
                 print(f'\nwriting occupancy results to {args.out}')
                 mmcv.dump(lidar_seg_results, args.out)
             else:
-                print(f'\nwriting results to {args.out}')
-                iou = compute_iou(lidar_seg_results)
-                print(iou)
-                print('16 categores mIoU:',iou[1:].mean())
-                # assert False
                 mmcv.dump(lidar_seg_results, args.out)
+                print(f'\nwriting results to {args.out}')
+                if not args.test_submission:
+                    iou = compute_iou(lidar_seg_results)
+                    print(iou)
+                    print('16 categores mIoU:',iou[1:].mean())
         kwargs = {} if args.eval_options is None else args.eval_options
         kwargs['jsonfile_prefix'] = osp.join('test', args.config.split(
             '/')[-1].split('.')[-2], time.ctime().replace(' ', '_').replace(':', '_'))
