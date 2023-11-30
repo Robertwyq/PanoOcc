@@ -28,11 +28,11 @@ Comprehensive modeling of the surrounding 3D world is key to the success of auto
 - nus-det pretrain is the fcos3d pretrain on nuScenes detection, widely used in FCOS3D, BEVFormer
 - Download the nus-seg pretrain here:  https://pan.baidu.com/s/1nx3wpQ96fF7R0OVNHSr1Zg  fwcp
 
-| Backbone | Config | Image Size | Epochs |  Pretrain | Memory | mIoU | 
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-| R101-DCN | [Pano-small](./projects/configs/PanoOcc/Occupancy/Occ3d-nuScenes/PanoOcc_small.py) | 0.5x | 12 | nus-det | 14 G | 36.63 | 
-| R101-DCN | [Pano-base](./projects/configs/PanoOcc/Occupancy/Occ3d-nuScenes/PanoOcc_base.py) | 1.0x | 24 | nus-det | 35 G | 41.60 | 
-| R101-DCN | [Pano-base-pretrain](./projects/configs/PanoOcc/Occupancy/Occ3d-nuScenes/PanoOcc_base_pretrain.py) | 1.0x | 24 | nus-seg | 35 G | 42.13 |
+| Backbone | Config | Image Size | Epochs |  Pretrain | Memory | mIoU | checkpoints | 
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
+| R101-DCN | [Pano-small](./projects/configs/PanoOcc/Occupancy/Occ3d-nuScenes/PanoOcc_small.py) | 0.5x | 12 | nus-det | 14 G | 36.63 | [model](https://drive.google.com/file/d/15OwW4og6k8vSAWSYpG9Jquuk32u_tqdh/view?usp=sharing) |
+| R101-DCN | [Pano-base](./projects/configs/PanoOcc/Occupancy/Occ3d-nuScenes/PanoOcc_base.py) | 1.0x | 24 | nus-det | 35 G | 41.60 | [model](https://drive.google.com/file/d/1V4OF1OAoGpl0lcPOX85JTO-DyzN-FaYG/view?usp=sharing) |
+| R101-DCN | [Pano-base-pretrain](./projects/configs/PanoOcc/Occupancy/Occ3d-nuScenes/PanoOcc_base_pretrain.py) | 1.0x | 24 | nus-seg | 35 G | 42.13 | |
 
 
 ## 3D panoptic segmentation
@@ -48,7 +48,8 @@ Comprehensive modeling of the surrounding 3D world is key to the success of auto
 
 | Backbone | Config | Image Size | Epochs |  Pretrain | mIoU |
 | :---: | :---: | :---: | :---: | :---:  | :---: |
-| R101 | [Pano-base-4f](./projects/configs/PanoOcc/Panoptic/PanoOcc_base_4f_cat_test.py)  | 1.0x | 24 | nus-det | 0.714 |
+| R101 | [Pano-base-4f](./projects/configs/PanoOcc/Panoptic/test/PanoOcc_base_4f_cat_test.py)  | 1.0x | 24 | nus-det | 0.714 |
+| R101 | [Pano-xl-4f](./projects/configs/PanoOcc/Panoptic/test/PanoOcc_XL_4f_cat_test.py)  | 1.0x | 24 | nus-det | 0.737 |
 
 # Bibtex
 If this work is helpful for your research, please consider citing the following BibTeX entry.
