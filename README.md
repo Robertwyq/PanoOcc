@@ -32,7 +32,7 @@ Comprehensive modeling of the surrounding 3D world is key to the success of auto
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | R101-DCN | [Pano-small](./projects/configs/PanoOcc/Occupancy/Occ3d-nuScenes/PanoOcc_small.py) | 0.5x | 12 | nus-det | 14 G | 36.63 | [model](https://drive.google.com/file/d/15OwW4og6k8vSAWSYpG9Jquuk32u_tqdh/view?usp=sharing) |
 | R101-DCN | [Pano-base](./projects/configs/PanoOcc/Occupancy/Occ3d-nuScenes/PanoOcc_base.py) | 1.0x | 24 | nus-det | 35 G | 41.60 | [model](https://drive.google.com/file/d/1V4OF1OAoGpl0lcPOX85JTO-DyzN-FaYG/view?usp=sharing) |
-| R101-DCN | [Pano-base-pretrain](./projects/configs/PanoOcc/Occupancy/Occ3d-nuScenes/PanoOcc_base_pretrain.py) | 1.0x | 24 | nus-seg | 35 G | 42.13 | |
+| R101-DCN | [Pano-base-pretrain](./projects/configs/PanoOcc/Occupancy/Occ3d-nuScenes/PanoOcc_base_pretrain.py) | 1.0x | 24 | nus-seg | 35 G | 42.13 | [model](https://drive.google.com/file/d/1EFGHR9fp-leD94k2bpkW0R-s2iUlnM2A/view?usp=sharing) |
 
 
 ## 3D panoptic segmentation
