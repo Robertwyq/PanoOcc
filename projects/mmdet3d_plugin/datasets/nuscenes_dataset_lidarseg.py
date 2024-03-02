@@ -131,7 +131,10 @@ class LidarSegNuScenesDataset(NuScenesDataset):
         # standard protocal modified from SECOND.Pytorch
         lidar_path = info['lidar_path'][16:]
         lidar_sd_token = self.nusc_seg.get('sample', info['token'])['data']['LIDAR_TOP']
-        lidarseg_labels_filename = os.path.join(self.nusc_seg.dataroot,
+        
+        # for test submission
+        if self.version != 'v1.0-test':
+            lidarseg_labels_filename = os.path.join(self.nusc_seg.dataroot,
                                                 self.nusc_seg.get('lidarseg', lidar_sd_token)['filename'])
         input_dict = dict(
             sample_idx=info['token'],
@@ -205,10 +208,12 @@ class LidarSegNuScenesDataset(NuScenesDataset):
             input_dict['ann_info']['pts_semantic_mask_path'] = lidarseg_labels_filename
             input_dict['ann_info']['learning_map'] = self.learning_map
         else:
-            annos = self.get_ann_info(index)
-            input_dict['ann_info'] = annos
-            input_dict['ann_info']['pts_semantic_mask_path'] = lidarseg_labels_filename
-            input_dict['ann_info']['learning_map'] = self.learning_map
+            # for test submission
+            if self.version != 'v1.0-test':
+                annos = self.get_ann_info(index)
+                input_dict['ann_info'] = annos
+                input_dict['ann_info']['pts_semantic_mask_path'] = lidarseg_labels_filename
+                input_dict['ann_info']['learning_map'] = self.learning_map
 
         rotation = Quaternion(input_dict['ego2global_rotation'])
         translation = input_dict['ego2global_translation']
@@ -231,7 +236,6 @@ class LidarSegNuScenesDataset(NuScenesDataset):
         if self.test_mode:
             return self.prepare_test_data(idx)
         while True:
-
             data = self.prepare_train_data(idx)
             if data is None:
                 idx = self._rand_another(idx)

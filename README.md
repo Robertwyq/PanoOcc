@@ -2,13 +2,15 @@
 > **PanoOcc: Unified Occupancy Representation for Camera-based 3D Panoptic Segmentation** [[paper](https://arxiv.org/abs/2306.10013)]
 
 # News 
+- **[2024/2/27]** PanoOcc is accepted by CVPR 2024
 - **[2023/6/29]** Code initialization, support occupancy prediction
 - **[2023/6/16]** We release the arXiv version ([Paper in arXiv](https://arxiv.org/abs/2306.10013))
 
 
 # Catalog
-- [ ] Sparse Decoder
-- [ ] 3D Panoptic Segmentation (nuScenes)
+- [ ] 3D Panoptic Segmentation (Waymo)
+- [ ] Sparse Decoder, Panoptic Refine
+- [x] 3D Panoptic Segmentation (nuScenes)
 - [x] Occupancy Prediction (Occ3D-nuScenes)
 - [x] Initialize
 
@@ -38,11 +40,11 @@ Comprehensive modeling of the surrounding 3D world is key to the success of auto
 ## 3D panoptic segmentation
 - nuScenes: LiDAR Semantic Segmentation (Validation)
 
-| Backbone | Config | Image Size | Epochs |  Pretrain | Memory | mIoU | mAP | NDS |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-| R50 | [Pano-small-1f](./projects/configs/PanoOcc/Panoptic/PanoOcc_small_1f.py) | 0.5x | 24 | ImageNet | 16G  | 0.663 | 0.291 | 0.340|
-| R50 | [Pano-small-4f](./projects/configs/PanoOcc/Panoptic/PanoOcc_small_4f.py) | 0.5x | 24 | ImageNet | 18G  | 0.685 | 0.323 | 0.419|
-| R101 | [Pano-base-4f](./projects/configs/PanoOcc/Panoptic/PanoOcc_base_4f_cat.py)  | 1.0x | 24 | nus-det | 24G | 0.714 | 0.413 | 0.501|
+| Backbone | Config | Image Size | Epochs |  Pretrain | Memory | mIoU | mAP | NDS | checkpoints | 
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
+| R50 | [Pano-small-1f](./projects/configs/PanoOcc/Panoptic/PanoOcc_small_1f.py) | 0.5x | 24 | ImageNet | 16G  | 0.667 | 0.295 | 0.348| [model](https://drive.google.com/file/d/1zEUFIYbukp_aHInsj5Wgp4sGs3htxJh_/view?usp=sharing) |
+| R50 | [Pano-small-4f](./projects/configs/PanoOcc/Panoptic/PanoOcc_small_4f.py) | 0.5x | 24 | ImageNet | 18G  | 0.682 | 0.331 | 0.421| [model](https://drive.google.com/file/d/1qr7OH292mhcXc9T25DTuELiavS3d9QGs/view?usp=sharing) |
+| R101 | [Pano-base-4f](./projects/configs/PanoOcc/Panoptic/PanoOcc_base_4f.py)  | 1.0x | 24 | nus-det | 24G | 0.712 | 0.411 | 0.497| [model](https://drive.google.com/file/d/1mFVTHkN9MHQdBrHR43FBs1QEUiJuXvBA/view?usp=sharing)|
 
 - nuScenes: LiDAR Semantic Segmentation (Test)
 

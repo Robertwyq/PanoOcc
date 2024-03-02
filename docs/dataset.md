@@ -3,10 +3,10 @@ Download nuScenes V1.0 full dataset data  and CAN bus expansion data [HERE](http
 ## 1. NuScenes LiDAR Benchmark
 - Train by supervision from LiDAR points, and evaluation on the LiDAR benchmark.
 ```shell
-# For segmentation & panoptic, You need lidarseg & panoptic
-data_path: /data/nuscenes
+# For segmentation & panoptic segmentation, You need lidarseg & panoptic
+data_path: ./data/nuscenes
 # cp yaml file for label mapping
-cp projects/configs/label_mapping/nuscenes.yaml /data/nuscenes/
+cp projects/configs/label_mapping/nuscenes.yaml ./data/nuscenes/
 ```
 **dataset structure**
 ```
@@ -32,9 +32,8 @@ python tools/create_data.py nuscenes --root-path ./data/nuscenes --out-dir ./dat
 
 Using the above code will generate `nuscenes_infos_temporal_{train,val}.pkl`.
 
-## 2. NuScenes Occupancy Benchmark (CVPR workshop)
+## 2. NuScenes Occupancy Benchmark (CVPR2023 workshop)
 Download the annotations [HERE](https://opendatalab.com/CVPR2023-3D-Occupancy/cli)
-- only support validation now
 - download gts & annotations is enough, no need for the img, others are same in the nuScenes.
 
 **dataset structure**
@@ -71,7 +70,10 @@ Generate the info files for test split:
 python tools/create_data_occ.py occ --root-path ./data/occ3d-test --out-dir ./data/occ3d-test --extra-tag occ --version v1.0-test --canbus ./data/nuscenes --occ-path ./data/occ3d-test
 ```
 
-## 3. NuScenes OpenOccupancy
+## 3. Semantic KITTI
+To prepare for SemanticKITTI dataset, please download the [KITTI Odometry Dataset](https://www.cvlibs.net/datasets/kitti/eval_odometry.php) (including color, velodyne laser data, and calibration files) and the annotations for Semantic Scene Completion from [SemanticKITTI](http://www.semantic-kitti.org/dataset.html#download).
+
+## 4. NuScenes OpenOccupancy
 refer to https://github.com/JeffWang987/OpenOccupancy
 
 we only use the dense label:

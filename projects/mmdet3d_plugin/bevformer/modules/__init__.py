@@ -12,3 +12,5 @@ from .occ_temporal_encoder import OccTemporalEncoder
 from .transformer_occ import TransformerOcc
 from .occ_voxel_decoder import VoxelDecoder
 from .pano_transformer_occ import PanoOccTransformer
+from .panoseg_transformer_occ import PanoSegOccTransformer
+from .occ_voxel_seg_decoder import VoxelNaiveDecoder
