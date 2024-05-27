@@ -45,6 +45,7 @@ Comprehensive modeling of the surrounding 3D world is key to the success of auto
 | R50 | [Pano-small-1f](./projects/configs/PanoOcc/Panoptic/PanoOcc_small_1f.py) | 0.5x | 24 | ImageNet | 16G  | 0.667 | 0.295 | 0.348| [model](https://drive.google.com/file/d/1zEUFIYbukp_aHInsj5Wgp4sGs3htxJh_/view?usp=sharing) |
 | R50 | [Pano-small-4f](./projects/configs/PanoOcc/Panoptic/PanoOcc_small_4f.py) | 0.5x | 24 | ImageNet | 18G  | 0.682 | 0.331 | 0.421| [model](https://drive.google.com/file/d/1qr7OH292mhcXc9T25DTuELiavS3d9QGs/view?usp=sharing) |
 | R101 | [Pano-base-4f](./projects/configs/PanoOcc/Panoptic/PanoOcc_base_4f.py)  | 1.0x | 24 | nus-det | 24G | 0.712 | 0.411 | 0.497| [model](https://drive.google.com/file/d/1mFVTHkN9MHQdBrHR43FBs1QEUiJuXvBA/view?usp=sharing)|
+| Intern-XL | [Pano-large-4f](./projects/configs/PanoOcc/Panoptic/PanoOcc_large_4f.py)  | 1.0x | 24 | [nus-det-pretrain](https://drive.google.com/file/d/1YQxwgIGHRKvBSI8RvNmJ61d_fUZR3pcb/view?usp=sharing) | 35G | 0.740 | 0.477 | 0.551| [model](https://pan.baidu.com/s/1JLAANJphipM4azZL0FeU8A?pwd=qizu)|
 
 - nuScenes: LiDAR Semantic Segmentation (Test)
 
